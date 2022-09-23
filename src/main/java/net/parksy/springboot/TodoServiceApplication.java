@@ -16,10 +16,9 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @SpringBootApplication
-//@OpenAPIDefinition(info = @Info(title = "Darryl's Reference Spring Boot Application",
-//		version = "1.0", description = "TODO Application Plus"))
+@OpenAPIDefinition(info = @Info(title = "Darryl's Reference Spring Boot Application",
+		version = "1.0", description = "TODO Application Plus"))
 public class TodoServiceApplication {
-
 	private static final Logger log = LoggerFactory.getLogger(TodoServiceApplication.class);
 
 	public static void main(String[] args) {
@@ -40,4 +39,5 @@ public class TodoServiceApplication {
 			log.info("Saved {} todos in the database", todos.size());
 		};
 	}
+
 }

@@ -1,7 +1,6 @@
 package net.parksy.springboot.repository;
 
 import net.parksy.springboot.model.Todo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -38,7 +37,7 @@ public class TodoRepository  {
 
     public int save(Todo todo) {
         return jdbcTemplate.update("INSERT INTO Todo (id, user_id, title, completed, version) VALUES(?,?,?,?,?)",
-                todo.id(), todo.userId(), todo.title(), todo.completed(), todo.version());
+                todo.getId(), todo.getUserId(), todo.getTitle(), todo.isCompleted(), todo.getVersion());
     }
 
     public void saveAll(List<Todo> todos) {
@@ -47,5 +46,8 @@ public class TodoRepository  {
         }
     }
 
+    public int delete(Integer id) {
+        return jdbcTemplate.update("DELETE FROM Todo WHERE id=?", id);
+    }
 
 }
