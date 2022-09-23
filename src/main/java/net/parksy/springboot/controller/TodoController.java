@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/todos")
+//@RequestMapping("/api/todos")
 public class TodoController {
 
     private final TodoService todoService;
@@ -23,12 +23,12 @@ public class TodoController {
         this.restTemplate = restTemplate;
     }
 
-    @GetMapping
+    @GetMapping(value = "/", produces = "application/json")
     public List<Todo> findAll() {
         return todoService.findAll();
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/{id}", produces = "application/json")
     public Optional<Todo> getTodo(@PathVariable int id) {
         return todoService.findById(id);
     }

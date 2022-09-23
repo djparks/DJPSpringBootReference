@@ -1,5 +1,7 @@
 package net.parksy.springboot;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import net.parksy.springboot.model.Todo;
 import net.parksy.springboot.service.JsonPlaceHolderService;
 import net.parksy.springboot.service.TodoService;
@@ -14,6 +16,8 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @SpringBootApplication
+//@OpenAPIDefinition(info = @Info(title = "Darryl's Reference Spring Boot Application",
+//		version = "1.0", description = "TODO Application Plus"))
 public class TodoServiceApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(TodoServiceApplication.class);
