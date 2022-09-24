@@ -1,6 +1,6 @@
 # My Reference/Playground for Spring Boot based REST, etc learning, testing, etc.
 
-Start of project based on the tutorial `Spring Boot call REST API Tutorial` by Dav Vega at <https://www.youtube.com/watch?v=XEtPVm_SL2Q>
+Start of project roughly based on the tutorial `Spring Boot call REST API Tutorial` by Dav Vega at <https://www.youtube.com/watch?v=XEtPVm_SL2Q>
 
 ## Running the applications
 
@@ -14,16 +14,20 @@ Start of project based on the tutorial `Spring Boot call REST API Tutorial` by D
 
 ## TODOs:
  
+- [ ] Add test stuff, so don't have to restart!
 - [ ] Kafka Producer
 - [ ] Kafka Consumer 
+- [ ] Prettify Index.html
 - [ ] Unit Tests of Kafka
+- [ ] Integration Tests of Kafka
 - [ ] Flag like from Work!
 - [ ] Optionals
-- [ ] Get Endpoint
 - [ ] Put Endpoint
-- [ ] Post Endpoint
-- [ ] Del Endpoint
 - [ ] Docker-composerize
   - [ ] https://www.baeldung.com/java-dockerize-app
 - [ ] OpenAPI
   - https://www.udemy.com/course-dashboard-redirect/?course_id=2640970
+
+## Great references used while programming:
+* <https://www.bezkoder.com/spring-boot-jpa-h2-example/>
+* <https://www.bezkoder.com/spring-boot-jdbctemplate-crud-example/>

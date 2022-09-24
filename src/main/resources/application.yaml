@@ -1,0 +1,4 @@
+springdoc:
+  swagger-ui:
+    path: /docs/swagger-ui
+  api-docs.path: /djparks-openapi

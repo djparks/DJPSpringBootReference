@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import net.parksy.springboot.model.Todo;
-import org.springframework.web.client.RestTemplate;
 
 @Slf4j
 @RestController
@@ -18,11 +17,8 @@ import org.springframework.web.client.RestTemplate;
 public class TodoController {
 
     private final TodoService todoService;
-    private final RestTemplate restTemplate;
-
-    public TodoController(TodoService todoService, RestTemplate restTemplate) {
+    public TodoController(TodoService todoService) {
         this.todoService = todoService;
-        this.restTemplate = restTemplate;
     }
 
     @GetMapping(value = "/", produces = "application/json")
@@ -41,11 +37,11 @@ public class TodoController {
         try {
             int result = todoService.delete(id);
             if (result == 0) {
-                return new ResponseEntity<>("Cannot find Tutorial with id=" + id, HttpStatus.OK);
+                return new ResponseEntity<>("Cannot find Todo with id=" + id, HttpStatus.OK);
             }
-            return new ResponseEntity<>("Tutorial was deleted successfully.", HttpStatus.OK);
+            return new ResponseEntity<>("Todo was deleted successfully.", HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>("Cannot delete tutorial.", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("Cannot delete Todo.", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
     }
@@ -56,4 +52,20 @@ public class TodoController {
         return todo;
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateTodo(@PathVariable("id") Integer id, @RequestBody String description) {
+        Optional<Todo> todo = todoService.findById(id);
+        log.info("Todo before change {}", todo.toString());
+
+        if (todo.isPresent()) {
+            Todo _todo = todo.get();
+            _todo.setTitle(description);
+
+            todoService.save(_todo);
+            log.info("Todo after change {}", todo.toString());
+            return new ResponseEntity<>("Todo was updated successfully.", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Cannot find Todo with id=" + id, HttpStatus.NOT_FOUND);
+        }
+    }
 }

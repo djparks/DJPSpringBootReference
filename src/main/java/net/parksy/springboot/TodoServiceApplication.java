@@ -17,7 +17,7 @@ import java.util.List;
 
 @SpringBootApplication
 @OpenAPIDefinition(info = @Info(title = "Darryl's Reference Spring Boot Application",
-		version = "1.0", description = "TODO Application Plus"))
+		version = "1.0", description = "Darryl's Playground"))
 public class TodoServiceApplication {
 	private static final Logger log = LoggerFactory.getLogger(TodoServiceApplication.class);
 
