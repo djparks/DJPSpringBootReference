@@ -60,6 +60,11 @@ public class TodoController {
         if (todo.isPresent()) {
             Todo _todo = todo.get();
             _todo.setTitle(description);
+            if(_todo.getVersion() == null) {
+                _todo.setVersion(1);
+            } else {
+                _todo.setVersion(_todo.getVersion() + 1);
+            }
 
             todoService.save(_todo);
             log.info("Todo after change {}", todo.toString());

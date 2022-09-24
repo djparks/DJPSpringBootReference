@@ -14,7 +14,7 @@ Start of project roughly based on the tutorial `Spring Boot call REST API Tutori
 
 ## TODOs:
  
-- [ ] Add test stuff, so don't have to restart!
+- [X] Add test stuff, so don't have to restart!
 - [ ] Kafka Producer
 - [ ] Kafka Consumer 
 - [ ] Prettify Index.html
@@ -27,6 +27,7 @@ Start of project roughly based on the tutorial `Spring Boot call REST API Tutori
   - [ ] https://www.baeldung.com/java-dockerize-app
 - [ ] OpenAPI
   - https://www.udemy.com/course-dashboard-redirect/?course_id=2640970
+- [ ] Do I need to turn off dev tools if in a production mode? More informational.
 
 ## Great references used while programming:
 * <https://www.bezkoder.com/spring-boot-jpa-h2-example/>
