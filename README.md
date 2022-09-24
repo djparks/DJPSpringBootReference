@@ -11,24 +11,3 @@ Start of project roughly based on the tutorial `Spring Boot call REST API Tutori
 * Well covered in Unit Tests
 * Integrate a number of technologies as possible for learning.
 * Self-documenting as possible, but include comments throughout code of things I've learned and explanations.
-
-## TODOs:
- 
-- [X] Add test stuff, so don't have to restart!
-- [ ] Kafka Producer
-- [ ] Kafka Consumer 
-- [ ] Prettify Index.html
-- [ ] Unit Tests of Kafka
-- [ ] Integration Tests of Kafka
-- [ ] Flag like from Work!
-- [ ] Optionals
-- [ ] Put Endpoint
-- [ ] Docker-composerize
-  - [ ] https://www.baeldung.com/java-dockerize-app
-- [ ] OpenAPI
-  - https://www.udemy.com/course-dashboard-redirect/?course_id=2640970
-- [ ] Do I need to turn off dev tools if in a production mode? More informational.
-
-## Great references used while programming:
-* <https://www.bezkoder.com/spring-boot-jpa-h2-example/>
-* <https://www.bezkoder.com/spring-boot-jdbctemplate-crud-example/>

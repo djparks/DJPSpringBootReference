@@ -1,0 +1,30 @@
+version: '3.6'
+
+services:
+#  database:
+#    image: mysql:8.0.22
+#    environment:
+#      - MYSQL_DATABASE=studentdb
+#      - MYSQL_USER=root
+#      - MYSQL_ROOT_PASSWORD=pAssw0rd
+#    networks:
+#      - db
+#      - app
+#    volumes:
+#      - /Users/priyadarshanipandey/Downloads/demo/insert.sql:/usr/data/insert.sql
+  demoAPIApplication:
+    image: djparks/sbreference
+    command: ["java","-jar","/app.jar"]
+    ports:
+      - '8081:8080'
+    working_dir: /usr/src/app
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:mysql://database:3306/studentdb?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false
+#    depends_on:
+#      - database
+    networks:
+      - app
+#      - db
+networks:
+#  db:
+  app:
