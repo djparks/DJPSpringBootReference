@@ -7,7 +7,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class TodoRepository  {
@@ -24,12 +23,11 @@ public class TodoRepository  {
     }
 
 //    @Override
-    public Optional<Todo> findById(int id) {
+    public Todo findById(int id) {
         try {
-            Todo todo = jdbcTemplate.queryForObject("SELECT * FROM Todo WHERE id=?",
-                    BeanPropertyRowMapper.newInstance(Todo.class), id);
 
-            return Optional.ofNullable(todo);
+            return jdbcTemplate.queryForObject("SELECT * FROM Todo WHERE id=?",
+                    BeanPropertyRowMapper.newInstance(Todo.class), id);
         } catch (IncorrectResultSizeDataAccessException e) {
             return null;
         }

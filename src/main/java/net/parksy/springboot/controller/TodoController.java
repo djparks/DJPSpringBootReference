@@ -1,7 +1,6 @@
 package net.parksy.springboot.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import lombok.extern.slf4j.Slf4j;
 import net.parksy.springboot.service.TodoService;
@@ -27,7 +26,7 @@ public class TodoController {
     }
 
     @GetMapping(value = "/{id}", produces = "application/json")
-    public Optional<Todo> getTodo(@PathVariable Integer id) {
+    public Todo getTodo(@PathVariable Integer id) {
         return todoService.findById(id);
     }
 
@@ -54,20 +53,19 @@ public class TodoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<String> updateTodo(@PathVariable("id") Integer id, @RequestBody String description) {
-        Optional<Todo> todo = todoService.findById(id);
+        Todo todo = todoService.findById(id);
         log.info("Todo before change {}", todo.toString());
 
-        if (todo.isPresent()) {
-            Todo _todo = todo.get();
-            _todo.setTitle(description);
-            if(_todo.getVersion() == null) {
-                _todo.setVersion(1);
+        if (todo != null) {
+            todo.setTitle(description);
+            if(todo.getVersion() == null) {
+                todo.setVersion(1);
             } else {
-                _todo.setVersion(_todo.getVersion() + 1);
+                todo.setVersion(todo.getVersion() + 1);
             }
 
-            todoService.save(_todo);
-            log.info("Todo after change {}", todo.toString());
+            todoService.save(todo);
+            log.info("Todo after change {}", todo);
             return new ResponseEntity<>("Todo was updated successfully.", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("Cannot find Todo with id=" + id, HttpStatus.NOT_FOUND);
