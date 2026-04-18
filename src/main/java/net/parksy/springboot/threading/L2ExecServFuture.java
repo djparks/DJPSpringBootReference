@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 Level 2: ExecutorService + Future (Java 5)
  */
 @Slf4j
-public class ExecServFuture {
+public class L2ExecServFuture {
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(10);
         // Future<User> future = executor.submit(() -> database.fetchUser(userId));

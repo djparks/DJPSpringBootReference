@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 /*
 Level 1: Raw Threads (Java 1.0)
  */
-public class RawThread {
+public class L1RawThread {
     public static void main(String[] args) {
         // The ancient way
 //        Problem: No way to return a value. No composition. Manual thread management.
