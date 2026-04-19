@@ -2,6 +2,9 @@
 
 ## Introduction
 
+Original: https://github.com/mo0rti/Learning-Completable-Future
+Forked: https://github.com/djparks/Learning-Completable-Future
+
 This repository contains examples and code snippets from a series of articles on concurrency and threading in Spring Boot. The articles cover various topics such as thread pools, asynchronous programming, and best practices for handling concurrency in Spring and Java applications.
 
 ## Articles
